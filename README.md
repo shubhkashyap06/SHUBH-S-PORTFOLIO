@@ -3,4 +3,5 @@ A clean and responsive portfolio website highlighting my skills, education, and 
 
 Tech Stack  
 Frontend: HTML5, CSS3
+
 Form Handling: Google Apps Script (Google Sheets backend)
