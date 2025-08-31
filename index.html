@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHUBHPORTFOLIO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SHUBH</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#project">Project</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="hero-section">
+        <div class="left-content">
+            <h1>Hi, I'm <span>Shubh Kashyap</span></h1>
+            <h4>Aspiring Full Stack Developer</h4>
+        </div>
+
+        <div class="right-content">
+            <div class="image-container">
+                <img src="shubhpic.jpg" alt="SHUBH-PROFILE-PIC">
+            </div>
+        </div>
+    </main>
+
+    <!---------------------------about-------------------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="About.jpg" alt="About Image">
+                </div>
+
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        A driven, first-year CSE student at SRM KTR building my foundation as a Full Stack Developer with a passion for AI. 
+                        I enjoy translating complex problems into clean code and I am always open to new collaborations.
+                    </p>
+
+                    <div class="tabs">
+                        <input type="radio" name="tabset" id="tab1" checked>
+                        <label for="tab1">Skills</label>
+
+                        <input type="radio" name="tabset" id="tab3">
+                        <label for="tab3">Education</label>
+
+                        <div class="tab-panels">
+                            <div class="tab-panel" id="skills-panel">
+                                <ul>
+                                    <li><span>Web Development</span><br>Learning frontend & backend for web apps</li>
+                                    <li><span>Tech Management</span><br>Exploring project management & team collaboration</li>
+                                    <li><span>Python Programming</span><br>Practicing problem-solving</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-panel" id="education-panel">
+                                <ul>
+                                    <li><span>2025-2029</span><br>B.Tech in Computer Science</li>
+                                    <li><span>2020-2025</span><br>D.A.V PUBLIC SCHOOL</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------------PROJECT--------------------------------------->
+    <div class="project" id="project">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="work-list">
+            <div class="work-card">
+                <img src="Work 1.png" alt="Rock Paper Scissors Game">
+                <div class="overlay">
+                    <h3>Rock Paper Scissors Game</h3>
+                    <p>A fun Python Tkinter game where you play against the computer. Tracks scores, rounds, and shows the winner instantly.</p>
+                    <a href="https://github.com/shubhkashyap06/rockpaperscissors" target="_blank" class="btn">View on GitHub</a>
+                </div>
+            </div>
+            <div class="work-card">
+                <img src="Comingsoon.png" alt="Coming Soon">
+                <div class="overlay">
+                    <h3>Coming Soon</h3>
+                    <p>More exciting projects will be added soon. Stay tuned!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-----------------------------------CONTACTS ------------------------------->
+    <div class="contact" id="contact">
+        <div class="container">
+            <div class="row">
+                
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> kashyapshubh61@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 9350611958</p>
+
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/shubhkashyap/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/shubhk340" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/shubhkashyap06" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © SHUBH </p>
+    </div>
+    <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby6jBgYuh2aigI4XaH-Tvn97DGl-iiW9iELKtlXsJaWNxWge2OGOg-lRs129Lhktqaa/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                console.log('Success!', response)
+                form.reset();
+                alert('Your message has been sent successfully!') 
+            })
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</body>
+</html>
